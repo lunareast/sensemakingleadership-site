@@ -1,7 +1,17 @@
+/* ============================================================
+   SENSEMAKING LEADERSHIP PTE LTD — DESIGN SYSTEM
+   Design Movement: Corporate Bauhaus — Structured Authority
+   Color Philosophy: Deep navy (trust) + Forest green (growth) + Gold (premium)
+   Typography: Fraunces (display serif) + Plus Jakarta Sans (body) + Space Grotesk (labels)
+   Layout: Left-anchored, asymmetric grid, diagonal section dividers
+   ============================================================ */
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
+
+/* Google Fonts loaded in index.html */
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -40,77 +50,60 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Brand custom tokens */
+  --color-navy: var(--navy);
+  --color-navy-light: var(--navy-light);
+  --color-forest: var(--forest);
+  --color-forest-light: var(--forest-light);
+  --color-gold: var(--gold);
+  --color-cream: var(--cream);
 }
 
 :root {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-600);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --radius: 0.65rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.235 0.015 65);
+  --radius: 0.5rem;
+
+  /* Brand palette */
+  --navy: oklch(0.26 0.07 255);
+  --navy-light: oklch(0.35 0.07 255);
+  --forest: oklch(0.40 0.10 155);
+  --forest-light: oklch(0.52 0.10 155);
+  --gold: oklch(0.76 0.12 85);
+  --cream: oklch(0.97 0.015 90);
+
+  /* Semantic tokens */
+  --primary: oklch(0.26 0.07 255);
+  --primary-foreground: oklch(0.97 0.015 90);
+  --secondary: oklch(0.40 0.10 155);
+  --secondary-foreground: oklch(0.97 0.015 90);
+  --background: oklch(0.97 0.015 90);
+  --foreground: oklch(0.18 0.04 255);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.235 0.015 65);
+  --card-foreground: oklch(0.18 0.04 255);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.235 0.015 65);
-  --secondary: oklch(0.98 0.001 286.375);
-  --secondary-foreground: oklch(0.4 0.015 65);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.141 0.005 285.823);
+  --popover-foreground: oklch(0.18 0.04 255);
+  --muted: oklch(0.93 0.01 90);
+  --muted-foreground: oklch(0.50 0.04 255);
+  --accent: oklch(0.76 0.12 85);
+  --accent-foreground: oklch(0.18 0.04 255);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.623 0.214 259.815);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.235 0.015 65);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.623 0.214 259.815);
-}
-
-.dark {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-500);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.85 0.005 65);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.85 0.005 65);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.85 0.005 65);
-  --secondary: oklch(0.24 0.006 286.033);
-  --secondary-foreground: oklch(0.7 0.005 65);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground:  oklch(0.92 0.005 65);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.488 0.243 264.376);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.85 0.005 65);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground:  oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.488 0.243 264.376);
+  --border: oklch(0.88 0.01 90);
+  --input: oklch(0.88 0.01 90);
+  --ring: oklch(0.40 0.10 155);
+  --chart-1: oklch(0.26 0.07 255);
+  --chart-2: oklch(0.40 0.10 155);
+  --chart-3: oklch(0.76 0.12 85);
+  --chart-4: oklch(0.35 0.07 255);
+  --chart-5: oklch(0.52 0.10 155);
+  --sidebar: oklch(0.26 0.07 255);
+  --sidebar-foreground: oklch(0.97 0.015 90);
+  --sidebar-primary: oklch(0.76 0.12 85);
+  --sidebar-primary-foreground: oklch(0.18 0.04 255);
+  --sidebar-accent: oklch(0.35 0.07 255);
+  --sidebar-accent-foreground: oklch(0.97 0.015 90);
+  --sidebar-border: oklch(0.35 0.07 255);
+  --sidebar-ring: oklch(0.76 0.12 85);
 }
 
 @layer base {
@@ -119,6 +112,13 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  h1, h2, h3 {
+    font-family: 'Fraunces', serif;
+  }
+  .label-text {
+    font-family: 'Space Grotesk', sans-serif;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -134,24 +134,11 @@
 }
 
 @layer components {
-  /**
-   * Custom container utility that centers content and adds responsive padding.
-   *
-   * This overrides Tailwind's default container behavior to:
-   * - Auto-center content (mx-auto)
-   * - Add responsive horizontal padding
-   * - Set max-width for large screens
-   *
-   * Usage: <div className="container">...</div>
-   *
-   * For custom widths, use max-w-* utilities directly:
-   * <div className="max-w-6xl mx-auto px-4">...</div>
-   */
   .container {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
+    padding-left: 1rem;
     padding-right: 1rem;
   }
 
@@ -162,16 +149,161 @@
 
   @media (min-width: 640px) {
     .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-left: 1.5rem;
       padding-right: 1.5rem;
     }
   }
 
   @media (min-width: 1024px) {
     .container {
-      padding-left: 2rem; /* 32px - desktop padding */
+      padding-left: 2rem;
       padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
+      max-width: 1280px;
     }
+  }
+
+  /* Brand-specific utilities */
+  .section-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: oklch(0.40 0.10 155);
+  }
+
+  .section-label-light {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: oklch(0.76 0.12 85);
+  }
+
+  .heading-display {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .border-accent-left {
+    border-left: 4px solid oklch(0.40 0.10 155);
+    padding-left: 1rem;
+  }
+
+  .btn-primary {
+    background-color: oklch(0.26 0.07 255);
+    color: oklch(0.97 0.015 90);
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 0.75rem 1.75rem;
+    border-radius: 0.25rem;
+    transition: background-color 200ms ease-out, transform 160ms ease-out;
+  }
+
+  .btn-primary:hover {
+    background-color: oklch(0.35 0.07 255);
+  }
+
+  .btn-primary:active {
+    transform: scale(0.97);
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    color: oklch(0.26 0.07 255);
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 0.75rem 1.75rem;
+    border-radius: 0.25rem;
+    border: 2px solid oklch(0.26 0.07 255);
+    transition: background-color 200ms ease-out, color 200ms ease-out, transform 160ms ease-out;
+  }
+
+  .btn-secondary:hover {
+    background-color: oklch(0.26 0.07 255);
+    color: oklch(0.97 0.015 90);
+  }
+
+  .btn-secondary:active {
+    transform: scale(0.97);
+  }
+
+  .btn-outline-light {
+    background-color: transparent;
+    color: oklch(0.97 0.015 90);
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 0.75rem 1.75rem;
+    border-radius: 0.25rem;
+    border: 2px solid oklch(0.97 0.015 90);
+    transition: background-color 200ms ease-out, color 200ms ease-out, transform 160ms ease-out;
+  }
+
+  .btn-outline-light:hover {
+    background-color: oklch(0.97 0.015 90);
+    color: oklch(0.26 0.07 255);
+  }
+
+  .btn-outline-light:active {
+    transform: scale(0.97);
+  }
+
+  .card-service {
+    background: white;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    border: 1px solid oklch(0.88 0.01 90);
+    transition: transform 250ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 250ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .card-service:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px oklch(0.26 0.07 255 / 0.12);
+  }
+
+  /* Diagonal section divider */
+  .diagonal-divider {
+    clip-path: polygon(0 0, 100% 4%, 100% 100%, 0 100%);
+    margin-top: -3rem;
+    padding-top: 5rem;
+  }
+
+  .diagonal-divider-reverse {
+    clip-path: polygon(0 4%, 100% 0, 100% 100%, 0 100%);
+    margin-top: -3rem;
+    padding-top: 5rem;
+  }
+
+  /* Scroll reveal animation */
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 500ms cubic-bezier(0.23, 1, 0.32, 1), transform 500ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 80ms; }
+    .reveal-delay-2 { transition-delay: 160ms; }
+    .reveal-delay-3 { transition-delay: 240ms; }
+    .reveal-delay-4 { transition-delay: 320ms; }
+    .reveal-delay-5 { transition-delay: 400ms; }
+  }
+
+  /* Gold accent line */
+  .gold-line {
+    width: 3rem;
+    height: 3px;
+    background-color: oklch(0.76 0.12 85);
+    margin-bottom: 1.5rem;
   }
 }
