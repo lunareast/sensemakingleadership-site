@@ -15,7 +15,7 @@ import {
   Award, Globe, TrendingUp, Brain, Heart, Lightbulb, Target
 } from "lucide-react";
 
-const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663064472366/d9LisnvZb933dYZtQnPs5E/hero-banner-nKUkL4pUENnutcWZJhuegV.webp";
+const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663064472366/d9LisnvZb933dYZtQnPs5E/hero-banner-v2-2m3iGG8GMCETDBneQH3DGi.webp";
 const ABOUT_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663064472366/d9LisnvZb933dYZtQnPs5E/about-section-jgjZvVbmmGdPRpNRZLDMBD.webp";
 const FRAMEWORK_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663064472366/d9LisnvZb933dYZtQnPs5E/services-visual-LfMb4K8tKAWzSRqUQ7xskW.webp";
 const PROGRAMMES_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663064472366/d9LisnvZb933dYZtQnPs5E/programmes-visual-VSYmtoVnxqu8tZVgiopdBU.webp";
@@ -28,8 +28,8 @@ const services = [
   },
   {
     icon: <BookOpen size={28} className="text-[oklch(0.40_0.10_155)]" />,
-    title: "WSQ Training",
-    desc: "Competency-based WSQ inspired courses, designed for measurable workplace impact.",
+    title: "Competency-Based Training",
+    desc: "Competency-based, WSQ-inspired courses designed for measurable workplace impact.",
   },
   {
     icon: <Star size={28} className="text-[oklch(0.40_0.10_155)]" />,
@@ -117,21 +117,7 @@ export default function Home() {
               </Link>
             </div>
 
-            {/* Accreditation badges */}
-            <div className="mt-12 flex flex-wrap items-center gap-6">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 size={16} className="text-[oklch(0.76_0.12_85)]" />
-                <span className="text-white/70 text-xs tracking-wider uppercase" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>SSG Approved</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 size={16} className="text-[oklch(0.76_0.12_85)]" />
-                <span className="text-white/70 text-xs tracking-wider uppercase" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>WSQ Accredited</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 size={16} className="text-[oklch(0.76_0.12_85)]" />
-                <span className="text-white/70 text-xs tracking-wider uppercase" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>SkillsFuture Eligible</span>
-              </div>
-            </div>
+
           </div>
         </div>
 
@@ -142,23 +128,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── STATS ── */}
-      <section className="bg-[oklch(0.26_0.07_255)] py-14">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((s, i) => (
-              <div key={i} className={`text-center reveal reveal-delay-${i + 1}`}>
-                <div className="text-4xl lg:text-5xl font-bold text-[oklch(0.76_0.12_85)] mb-2" style={{ fontFamily: "'Fraunces', serif" }}>
-                  {s.value}
-                </div>
-                <div className="text-white/60 text-sm tracking-wide" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                  {s.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* ── ABOUT TEASER ── */}
       <section className="py-24 bg-[oklch(0.97_0.015_90)]">
@@ -178,7 +148,7 @@ export default function Home() {
               </p>
               <div className="space-y-3 mb-8">
                 {[
-                  "WSQ competency-based programmes",
+                  "WSQ-inspired competency-based programmes",
                   "Psychotherapy-informed facilitation methodology",
                   "Accredited facilitators and business analysts",
                   "Regional delivery across Singapore, Malaysia & Indonesia",
@@ -260,7 +230,7 @@ export default function Home() {
                 The Transformative Learning Framework
               </h2>
               <p className="text-[oklch(0.35_0.04_255)] leading-relaxed mb-6">
-                Our proprietary framework integrates five interconnected disciplines — Sensemaking, Leadership, Service Excellence, Training, and Psychotherapy-Informed Learning — into a coherent system that develops the whole leader.
+                Our proprietary framework integrates five interconnected disciplines — Sensemaking, Leadership, Service Excellence, Competency-Based Training, and Psychotherapy-Informed Learning — into a coherent system that develops the whole leader.
               </p>
               <p className="text-[oklch(0.35_0.04_255)] leading-relaxed mb-8">
                 Each discipline reinforces the others, creating a learning architecture that produces durable change rather than temporary performance uplift.
