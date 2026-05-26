@@ -28,7 +28,7 @@ const values = [
   {
     icon: <Award size={24} className="text-[oklch(0.76_0.12_85)]" />,
     title: "Rigorous Standards",
-    desc: "As an SSG-approved provider, we hold ourselves to the highest standards of curriculum design, delivery quality, and learner outcomes.",
+    desc: "We hold ourselves to the highest standards of curriculum design, delivery quality, and learner outcomes — measured by the real-world impact our programmes produce.",
   },
   {
     icon: <Globe size={24} className="text-[oklch(0.76_0.12_85)]" />,
@@ -39,13 +39,13 @@ const values = [
 
 const milestones = [
   { year: "2018", event: "Founded in Singapore with a focus on leadership development and service excellence." },
-  { year: "2019", event: "Achieved SSG approval and launched first WSQ-accredited programmes." },
+  { year: "2019", event: "Launched first competency-based training programmes in Singapore." },
   { year: "2020", event: "Expanded facilitation methodology to integrate psychotherapy-informed learning principles." },
   { year: "2021", event: "Extended regional delivery to Malaysia and Indonesia." },
   { year: "2022", event: "Launched competency-based curriculum for the social service and healthcare sectors." },
   { year: "2023", event: "Developed proprietary Transformative Learning Framework integrating five core disciplines." },
   { year: "2024", event: "Crossed 500 leaders developed across public, private, and social sectors." },
-  { year: "2025", event: "Expanded WSQ portfolio to 20+ programmes with SkillsFuture Credit eligibility." },
+  { year: "2025", event: "Expanded programme portfolio to 20+ offerings across leadership, service excellence, and competency-based training." },
 ];
 
 export default function About() {
@@ -121,7 +121,7 @@ export default function About() {
                   "MSc Science of Learning, Nanyang Technological University",
                   "Accredited Facilitator (IAF-affiliated)",
                   "Certified Business Analyst",
-                  "SSG-Approved Adult Educator",
+                  "Adult Educator (Singapore)",
                   "Psychotherapy-Informed Practitioner",
                 ].map((cred, i) => (
                   <div key={i} className="flex items-center gap-3">
@@ -209,7 +209,7 @@ export default function About() {
             Partner With Us
           </h2>
           <p className="text-[oklch(0.35_0.04_255)] max-w-xl mx-auto mb-8 reveal reveal-delay-1">
-            Whether you are looking for a trusted learning partner, a facilitator for your next leadership retreat, or an SSG-funded training solution, we are ready to help.
+              Whether you are looking for a trusted learning partner, a facilitator for your next leadership retreat, or a customised training solution, we are ready to help.
           </p>
           <div className="flex flex-wrap gap-4 justify-center reveal reveal-delay-2">
             <Link href="/contact" className="btn-primary inline-flex items-center gap-2">

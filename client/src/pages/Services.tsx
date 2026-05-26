@@ -25,21 +25,21 @@ const services = [
       "360-degree feedback and Individual Development Plans",
       "Experiential learning with real-world application",
       "Cohort-based and one-to-one coaching formats",
-      "Available as WSQ-accredited or customised programmes",
+      "Available as open-enrolment or customised in-house programmes",
     ],
     audience: "Senior leaders, emerging leaders, leadership teams",
   },
   {
     icon: <BookOpen size={32} className="text-[oklch(0.76_0.12_85)]" />,
-    title: "WSQ / SSG-Funded Training",
-    tagline: "Competency-Based Learning with Government Support",
-    desc: "As an SSG-approved training provider, we offer a portfolio of WSQ-accredited programmes that are eligible for SkillsFuture funding. Our courses are designed to the highest standards of competency-based education, with clear learning outcomes, robust assessment, and measurable workplace transfer.",
+    title: "Competency-Based Training",
+    tagline: "Structured Learning Built Around Measurable Outcomes",
+    desc: "We design and deliver competency-based training programmes grounded in adult learning principles. Our courses are built around clear learning outcomes, robust assessment, and measurable workplace transfer — ensuring that learning translates into real performance improvement.",
     features: [
-      "Full portfolio of WSQ-accredited modules",
-      "SkillsFuture Credit eligible",
-      "Absentee payroll and course fee funding available",
-      "Competency-based assessment and certification",
-      "Regular curriculum review aligned to SSG frameworks",
+      "Competency-based curriculum design and delivery",
+      "Clear learning outcomes tied to workplace performance",
+      "Robust assessment and certification processes",
+      "Available as open-enrolment or customised in-house programmes",
+      "Regular curriculum review aligned to industry standards",
     ],
     audience: "Individuals, SMEs, large organisations",
   },
@@ -52,7 +52,7 @@ const services = [
       "Service culture diagnostics and gap analysis",
       "Experiential workshops with role-play and simulation",
       "Manager enablement for sustaining service standards",
-      "WSQ Service Excellence modules available",
+      "Structured service excellence modules available",
       "Post-programme coaching and follow-up",
     ],
     audience: "Customer-facing teams, service managers, hospitality and healthcare sectors",
@@ -103,10 +103,10 @@ const services = [
     icon: <BarChart2 size={32} className="text-[oklch(0.76_0.12_85)]" />,
     title: "Curriculum Development",
     tagline: "Learning Design That Drives Measurable Impact",
-    desc: "We design and develop competency-based curricula for organisations, training providers, and government agencies. Our learning design process is rigorous, evidence-based, and aligned to national frameworks including the Singapore Workforce Skills Qualifications (WSQ) system.",
+    desc: "We design and develop competency-based curricula for organisations, training providers, and government agencies. Our learning design process is rigorous, evidence-based, and aligned to national and industry competency frameworks.",
     features: [
       "Needs analysis and competency mapping",
-      "WSQ-aligned curriculum design",
+      "Competency-aligned curriculum design",
       "Instructional design for blended and digital delivery",
       "Assessment design and validation",
       "Train-the-trainer programmes",
@@ -156,7 +156,7 @@ export default function Services() {
                 Our services are not standalone offerings — they are interconnected disciplines within a coherent learning system. The Transformative Learning Framework ensures that every engagement, regardless of entry point, contributes to the development of the whole leader and the whole organisation.
               </p>
               <p className="text-[oklch(0.35_0.04_255)] leading-relaxed">
-                Whether you engage us for a single WSQ programme or a multi-year leadership journey, you benefit from the same rigorous methodology, the same commitment to evidence-based practice, and the same focus on lasting impact.
+                Whether you engage us for a single workshop or a multi-year leadership journey, you benefit from the same rigorous methodology, the same commitment to evidence-based practice, and the same focus on lasting impact.
               </p>
             </div>
             <div className="reveal reveal-delay-1">

@@ -11,12 +11,11 @@ import { ArrowRight, Clock, Users, Award, CheckCircle2, ChevronDown, ChevronUp }
 
 const PROGRAMMES_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663064472366/d9LisnvZb933dYZtQnPs5E/programmes-visual-VSYmtoVnxqu8tZVgiopdBU.webp";
 
-const categories = ["All", "Leadership", "Service Excellence", "WSQ Accredited", "Customised"];
+const categories = ["All", "Leadership", "Service Excellence", "Competency-Based", "Customised"];
 
 const programmes = [
   {
     category: "Leadership",
-    wsq: false,
     title: "Sensemaking Leadership Journey",
     subtitle: "A flagship multi-module leadership programme",
     duration: "3 days (modular)",
@@ -29,30 +28,28 @@ const programmes = [
       "Develop relational intelligence and psychological safety",
       "Create a personal leadership philosophy and development plan",
     ],
-    funding: "Customised — contact for pricing",
+    pricing: "Contact us for pricing",
   },
   {
-    category: "WSQ Accredited",
-    wsq: true,
-    title: "WSQ Apply Service Excellence Mindset",
-    subtitle: "SSG-funded | SkillsFuture Credit eligible",
+    category: "Competency-Based",
+    title: "Apply Service Excellence Mindset",
+    subtitle: "Foundational service excellence programme",
     duration: "1 day (8 hours)",
     participants: "Up to 25 per run",
     level: "All staff levels",
-    overview: "A WSQ-accredited programme that builds the foundational mindset and skills for delivering exceptional service. Covers service values, customer empathy, and practical service recovery techniques.",
+    overview: "A competency-based programme that builds the foundational mindset and skills for delivering exceptional service. Covers service values, customer empathy, and practical service recovery techniques.",
     outcomes: [
       "Articulate the principles of service excellence",
       "Demonstrate empathy and active listening in service interactions",
       "Apply service recovery frameworks in challenging situations",
       "Contribute to a positive service culture",
     ],
-    funding: "SSG-funded — up to 70% subsidy available",
+    pricing: "Contact us for pricing",
   },
   {
-    category: "WSQ Accredited",
-    wsq: true,
-    title: "WSQ Facilitate Effective Communication & Relationships",
-    subtitle: "SSG-funded | SkillsFuture Credit eligible",
+    category: "Competency-Based",
+    title: "Facilitate Effective Communication & Relationships",
+    subtitle: "Communication and relational skills for leaders",
     duration: "2 days (16 hours)",
     participants: "Up to 20 per run",
     level: "Supervisors and Managers",
@@ -63,11 +60,10 @@ const programmes = [
       "Navigate conflict with skill and confidence",
       "Build psychologically safe team environments",
     ],
-    funding: "SSG-funded — up to 70% subsidy available",
+    pricing: "Contact us for pricing",
   },
   {
     category: "Service Excellence",
-    wsq: false,
     title: "Service Culture Transformation Programme",
     subtitle: "Customised organisational intervention",
     duration: "3–6 months (phased)",
@@ -80,13 +76,12 @@ const programmes = [
       "Enable managers to sustain service standards",
       "Measure and track service culture improvement",
     ],
-    funding: "Customised — contact for pricing",
+    pricing: "Contact us for pricing",
   },
   {
-    category: "WSQ Accredited",
-    wsq: true,
-    title: "WSQ Lead with Emotional Intelligence",
-    subtitle: "SSG-funded | SkillsFuture Credit eligible",
+    category: "Competency-Based",
+    title: "Lead with Emotional Intelligence",
+    subtitle: "Emotional intelligence as a leadership competency",
     duration: "2 days (16 hours)",
     participants: "Up to 20 per run",
     level: "Team Leaders and Managers",
@@ -97,11 +92,10 @@ const programmes = [
       "Apply emotional intelligence in decision-making",
       "Build emotionally intelligent team cultures",
     ],
-    funding: "SSG-funded — up to 70% subsidy available",
+    pricing: "Contact us for pricing",
   },
   {
     category: "Leadership",
-    wsq: false,
     title: "Psychotherapy-Informed Leadership Retreat",
     subtitle: "Intensive developmental experience",
     duration: "2 days (residential)",
@@ -114,11 +108,10 @@ const programmes = [
       "Build authentic leadership presence",
       "Create a personal development commitment",
     ],
-    funding: "Customised — contact for pricing",
+    pricing: "Contact us for pricing",
   },
   {
     category: "Customised",
-    wsq: false,
     title: "Bespoke Leadership & Learning Solutions",
     subtitle: "Tailored to your organisation's needs",
     duration: "Flexible",
@@ -131,7 +124,7 @@ const programmes = [
       "Delivered by experienced facilitators",
       "Supported by pre- and post-programme coaching",
     ],
-    funding: "Contact us for a customised proposal",
+    pricing: "Contact us for a customised proposal",
   },
 ];
 
@@ -151,15 +144,6 @@ function ProgrammeCard({ prog, index }: { prog: typeof programmes[0]; index: num
               }}>
                 {prog.category}
               </span>
-              {prog.wsq && (
-                <span className="text-xs px-2 py-1 rounded-sm font-semibold" style={{
-                  fontFamily: "'Space Grotesk', sans-serif",
-                  background: "oklch(0.40 0.10 155)",
-                  color: "white"
-                }}>
-                  WSQ Accredited
-                </span>
-              )}
             </div>
             <h3 className="text-lg font-semibold text-[oklch(0.26_0.07_255)] mb-1" style={{ fontFamily: "'Fraunces', serif" }}>
               {prog.title}
@@ -200,7 +184,7 @@ function ProgrammeCard({ prog, index }: { prog: typeof programmes[0]; index: num
             </ul>
             <div className="bg-[oklch(0.93_0.01_90)] rounded-sm px-4 py-3">
               <span className="text-xs font-semibold text-[oklch(0.26_0.07_255)]" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                Funding: {prog.funding}
+                Pricing: {prog.pricing}
               </span>
             </div>
           </div>
@@ -251,7 +235,7 @@ export default function Programmes() {
                 Programmes Built for Impact
               </h1>
               <p className="text-white/70 text-lg leading-relaxed">
-                From SSG-funded WSQ courses to bespoke leadership journeys, our programmes are designed to produce measurable change at the individual, team, and organisational levels.
+                From focused competency-based workshops to multi-module leadership journeys, our programmes are designed to produce measurable change at the individual, team, and organisational levels.
               </p>
             </div>
             <div className="hidden lg:block">
@@ -294,22 +278,22 @@ export default function Programmes() {
         </div>
       </section>
 
-      {/* Funding info */}
+      {/* Programme enquiry CTA */}
       <section className="py-16 bg-[oklch(0.93_0.01_90)]">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <div className="gold-line mx-auto reveal" />
             <h2 className="heading-display text-3xl text-[oklch(0.26_0.07_255)] mb-5 reveal">
-              SkillsFuture & SSG Funding
+              Not Sure Which Programme Fits?
             </h2>
             <p className="text-[oklch(0.35_0.04_255)] leading-relaxed mb-8 reveal reveal-delay-1">
-              Many of our programmes are eligible for SSG course fee subsidies of up to 70%, absentee payroll funding, and SkillsFuture Credit. We will guide you through the funding application process to maximise your training investment.
+              Every organisation has unique learning needs. Our team will work with you to understand your context, your people, and your goals — and recommend the right combination of programmes and delivery formats.
             </p>
             <div className="grid md:grid-cols-3 gap-6 mb-8">
               {[
-                { label: "Course Fee Subsidy", value: "Up to 70%", note: "For eligible Singapore Citizens and PRs" },
-                { label: "Absentee Payroll", value: "Claimable", note: "For employers sending staff for training" },
-                { label: "SkillsFuture Credit", value: "Eligible", note: "For individual learners aged 25 and above" },
+                { label: "Open Enrolment", value: "Public Runs", note: "Join scheduled cohorts alongside peers from other organisations" },
+                { label: "In-House Delivery", value: "Private Runs", note: "Exclusive delivery for your team at your preferred location" },
+                { label: "Bespoke Design", value: "Customised", note: "Fully tailored programmes built around your specific objectives" },
               ].map((f, i) => (
                 <div key={i} className={`bg-white rounded-sm p-6 border border-[oklch(0.88_0.01_90)] reveal reveal-delay-${i + 1}`}>
                   <div className="text-2xl font-bold text-[oklch(0.26_0.07_255)] mb-1" style={{ fontFamily: "'Fraunces', serif" }}>{f.value}</div>
@@ -319,7 +303,7 @@ export default function Programmes() {
               ))}
             </div>
             <Link href="/contact" className="btn-primary inline-flex items-center gap-2 reveal reveal-delay-2">
-              Ask About Funding <ArrowRight size={16} />
+              Speak to Our Team <ArrowRight size={16} />
             </Link>
           </div>
         </div>

@@ -72,7 +72,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {[
                 "Leadership Development",
-                "Competency-Based Training *upcoming",
+                "Competency-Based Training",
                 "Service Excellence",
                 "Transformative Learning",
                 "Process Optimisation",

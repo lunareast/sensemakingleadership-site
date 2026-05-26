@@ -12,7 +12,7 @@ const CONTACT_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663064472366/d9L
 
 const enquiryTypes = [
   "Leadership Development Programme",
-  "WSQ / SSG-Funded Training",
+  "Competency-Based Training",
   "Service Excellence Programme",
   "Customised Learning Solution",
   "Facilitation or Coaching",
@@ -137,10 +137,10 @@ export default function Contact() {
               <div className="bg-[oklch(0.26_0.07_255)] rounded-sm p-6">
                 <div className="w-8 h-1 bg-[oklch(0.76_0.12_85)] mb-4" />
                 <h3 className="text-white font-semibold mb-3" style={{ fontFamily: "'Fraunces', serif" }}>
-                  SSG & SkillsFuture Enquiries
+                  Training & Programme Enquiries
                 </h3>
                 <p className="text-white/60 text-sm leading-relaxed">
-                  If you are enquiring about SSG-funded programmes or SkillsFuture Credit eligibility, please mention this in your message and we will provide full funding details.
+                  If you are enquiring about specific programmes, in-house delivery, or customised learning solutions, please include details about your organisation and team size in your message.
                 </p>
               </div>
             </div>

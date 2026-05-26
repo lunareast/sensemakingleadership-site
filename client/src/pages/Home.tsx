@@ -29,7 +29,7 @@ const services = [
   {
     icon: <BookOpen size={28} className="text-[oklch(0.40_0.10_155)]" />,
     title: "Competency-Based Training",
-    desc: "Competency-based, WSQ-inspired courses designed for measurable workplace impact.",
+    desc: "Competency-based courses built around clear outcomes and measurable workplace impact.",
   },
   {
     icon: <Star size={28} className="text-[oklch(0.40_0.10_155)]" />,
@@ -57,7 +57,7 @@ const stats = [
   { value: "15+", label: "Years of Experience" },
   { value: "500+", label: "Leaders Developed" },
   { value: "3", label: "Countries Served" },
-  { value: "20+", label: "WSQ Programmes" },
+  { value: "20+", label: "Programmes Offered" },
 ];
 
 const testimonials = [
@@ -72,7 +72,7 @@ const testimonials = [
     org: "Financial Services Organisation",
   },
   {
-    quote: "The WSQ service excellence programme delivered measurable improvements in our customer satisfaction scores within three months of completion.",
+    quote: "The service excellence programme delivered measurable improvements in our customer satisfaction scores within three months of completion.",
     name: "Operations Director",
     org: "Hospitality Group, Singapore",
   },
@@ -148,7 +148,7 @@ export default function Home() {
               </p>
               <div className="space-y-3 mb-8">
                 {[
-                  "WSQ-inspired competency-based programmes",
+                  "Competency-based training programmes",
                   "Psychotherapy-informed facilitation methodology",
                   "Accredited facilitators and business analysts",
                   "Regional delivery across Singapore, Malaysia & Indonesia",
@@ -265,8 +265,7 @@ export default function Home() {
               </p>
               <div className="space-y-4 mb-10">
                 {[
-                  { icon: <Award size={20} />, title: "WSQ Accredited Courses", desc: "SkillsFuture-eligible programmes with government funding support" },
-                  // caveat shown inline below
+                  { icon: <Award size={20} />, title: "Competency-Based Courses", desc: "Structured programmes with clear outcomes and robust assessment" },
                   { icon: <Users size={20} />, title: "Leadership Journeys", desc: "Multi-module cohort programmes for emerging and senior leaders" },
                   { icon: <Globe size={20} />, title: "Regional Delivery", desc: "Contextualised programmes delivered across Singapore, Malaysia, and Indonesia" },
                   { icon: <TrendingUp size={20} />, title: "Customised Solutions", desc: "Bespoke learning design aligned to your organisation's strategic objectives" },
@@ -277,7 +276,7 @@ export default function Home() {
                     </div>
                     <div>
                       <div className="text-white font-semibold text-sm mb-1" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                        {item.title}{i === 0 && <span className="ml-1 text-[oklch(0.76_0.12_85)] text-xs font-normal italic">*in progress</span>}
+                        {item.title}
                       </div>
                       <div className="text-white/60 text-sm">{item.desc}</div>
                     </div>
@@ -350,7 +349,7 @@ export default function Home() {
             Let's Build Your Leadership Capability
           </h2>
           <p className="text-white/70 text-lg max-w-xl mx-auto mb-10 reveal reveal-delay-1">
-            Whether you are developing emerging leaders, transforming service culture, or seeking SSG-funded training solutions, we are ready to partner with you.
+              Whether you are developing emerging leaders, transforming service culture, or seeking a customised training solution, we are ready to partner with you.
           </p>
           <div className="flex flex-wrap gap-4 justify-center reveal reveal-delay-2">
             <Link href="/contact" className="btn-primary inline-flex items-center gap-2">

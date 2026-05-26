@@ -25,10 +25,10 @@ const articles = [
     date: "April 2026",
   },
   {
-    category: "WSQ & SSG",
+    category: "Learning Design",
     readTime: "4 min read",
-    title: "Maximising Your SSG Training Investment: A Practical Guide",
-    excerpt: "SSG funding makes high-quality training accessible to Singapore organisations of all sizes. This guide explains the available funding mechanisms, eligibility criteria, and how to design a training plan that maximises both subsidy and learning impact.",
+    title: "Maximising Your Training Investment: A Practical Guide",
+    excerpt: "Training budgets are finite. This guide explains how to design a training plan that maximises both learning impact and return on investment — from needs analysis and programme selection through to transfer and evaluation.",
     date: "March 2026",
   },
   {
