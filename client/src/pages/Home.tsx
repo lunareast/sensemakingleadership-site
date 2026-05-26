@@ -28,8 +28,8 @@ const services = [
   },
   {
     icon: <BookOpen size={28} className="text-[oklch(0.40_0.10_155)]" />,
-    title: "WSQ / SSG-Funded Training",
-    desc: "Competency-based WSQ courses accredited by SkillsFuture Singapore, designed for measurable workplace impact.",
+    title: "WSQ Training",
+    desc: "Competency-based WSQ inspired courses, designed for measurable workplace impact.",
   },
   {
     icon: <Star size={28} className="text-[oklch(0.40_0.10_155)]" />,
@@ -95,7 +95,7 @@ export default function Home() {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${HERO_IMG})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.22_0.07_255/0.92)] via-[oklch(0.22_0.07_255/0.75)] to-[oklch(0.22_0.07_255/0.30)]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.22_0.07_255/0.97)] via-[oklch(0.22_0.07_255/0.88)] to-[oklch(0.22_0.07_255/0.70)]" />
 
         <div className="relative container mx-auto px-4 lg:px-8 pt-24 pb-16">
           <div className="max-w-2xl">
@@ -178,7 +178,7 @@ export default function Home() {
               </p>
               <div className="space-y-3 mb-8">
                 {[
-                  "SSG-funded WSQ competency-based programmes",
+                  "WSQ competency-based programmes",
                   "Psychotherapy-informed facilitation methodology",
                   "Accredited facilitators and business analysts",
                   "Regional delivery across Singapore, Malaysia & Indonesia",
@@ -260,7 +260,7 @@ export default function Home() {
                 The Transformative Learning Framework
               </h2>
               <p className="text-[oklch(0.35_0.04_255)] leading-relaxed mb-6">
-                Our proprietary framework integrates five interconnected disciplines — Sensemaking, Leadership, Service Excellence, WSQ Training, and Psychotherapy-Informed Learning — into a coherent system that develops the whole leader.
+                Our proprietary framework integrates five interconnected disciplines — Sensemaking, Leadership, Service Excellence, Training, and Psychotherapy-Informed Learning — into a coherent system that develops the whole leader.
               </p>
               <p className="text-[oklch(0.35_0.04_255)] leading-relaxed mb-8">
                 Each discipline reinforces the others, creating a learning architecture that produces durable change rather than temporary performance uplift.
@@ -296,6 +296,7 @@ export default function Home() {
               <div className="space-y-4 mb-10">
                 {[
                   { icon: <Award size={20} />, title: "WSQ Accredited Courses", desc: "SkillsFuture-eligible programmes with government funding support" },
+                  // caveat shown inline below
                   { icon: <Users size={20} />, title: "Leadership Journeys", desc: "Multi-module cohort programmes for emerging and senior leaders" },
                   { icon: <Globe size={20} />, title: "Regional Delivery", desc: "Contextualised programmes delivered across Singapore, Malaysia, and Indonesia" },
                   { icon: <TrendingUp size={20} />, title: "Customised Solutions", desc: "Bespoke learning design aligned to your organisation's strategic objectives" },
@@ -305,7 +306,9 @@ export default function Home() {
                       {item.icon}
                     </div>
                     <div>
-                      <div className="text-white font-semibold text-sm mb-1" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{item.title}</div>
+                      <div className="text-white font-semibold text-sm mb-1" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                        {item.title}{i === 0 && <span className="ml-1 text-[oklch(0.76_0.12_85)] text-xs font-normal italic">*in progress</span>}
+                      </div>
                       <div className="text-white/60 text-sm">{item.desc}</div>
                     </div>
                   </div>

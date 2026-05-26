@@ -72,7 +72,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {[
                 "Leadership Development",
-                "WSQ / SSG-Funded Training",
+                "WSQ Training *upcoming",
                 "Service Excellence",
                 "Transformative Learning",
                 "Process Optimisation",
@@ -114,14 +114,7 @@ export default function Footer() {
               </li>
             </ul>
 
-            <div className="mt-6 pt-6 border-t border-white/10">
-              <p className="text-white/40 text-xs" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                SSG-Approved Training Provider
-              </p>
-              <p className="text-white/40 text-xs mt-1" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                WSQ Accredited
-              </p>
-            </div>
+
           </div>
         </div>
       </div>
