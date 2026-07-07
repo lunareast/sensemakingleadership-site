@@ -1,224 +1,64 @@
 /* ============================================================
    PROGRAMMES PAGE — Sensemaking Leadership
+   Content sourced from: SensemakingFlagshipProgrammev2
    ============================================================ */
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Link } from "wouter";
-import { ArrowRight, Clock, Users, Award, CheckCircle2, ChevronDown, ChevronUp } from "lucide-react";
+import { ArrowRight, Clock, Users, CheckCircle2 } from "lucide-react";
 
 const PROGRAMMES_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663064472366/d9LisnvZb933dYZtQnPs5E/programmes-visual-VSYmtoVnxqu8tZVgiopdBU.webp";
 
-const categories = ["All", "Leadership", "Service Excellence", "Competency-Based", "Customised"];
-
-const programmes = [
+const modules = [
   {
-    category: "Leadership",
-    title: "Sensemaking Leadership Journey",
-    subtitle: "A flagship multi-module leadership programme",
-    duration: "3 days (modular)",
-    participants: "12–20 per cohort",
-    level: "Mid to Senior Leaders",
-    overview: "A transformative cohort-based programme that develops leaders' capacity to make meaning of complexity, build relational trust, and lead purposeful change. Integrates sensemaking theory, systems thinking, and psychotherapy-informed facilitation.",
-    outcomes: [
-      "Apply sensemaking frameworks to real organisational challenges",
-      "Build adaptive leadership practices for complex environments",
-      "Develop relational intelligence and psychological safety",
-      "Create a personal leadership philosophy and development plan",
-    ],
-    pricing: "Contact us for pricing",
+    number: "01",
+    half: "Day 1 · Morning",
+    title: "The World You Lead In",
+    focus: "Systems thinking · Me vs We · Today vs Tomorrow · The Singapore Strategy Map",
+    what: "Participants map the forces shaping their environment — geopolitical, demographic, technological. They locate themselves in the system, not as bystanders but as actors with choices to make.",
+    outcome: "A shared vocabulary for complexity. The realisation that the key variable in any system is people — and that people require more than hardware and software.",
   },
   {
-    category: "Competency-Based",
-    title: "Apply Service Excellence Mindset",
-    subtitle: "Foundational service excellence programme",
-    duration: "1 day (8 hours)",
-    participants: "Up to 25 per run",
-    level: "All staff levels",
-    overview: "A competency-based programme that builds the foundational mindset and skills for delivering exceptional service. Covers service values, customer empathy, and practical service recovery techniques.",
-    outcomes: [
-      "Articulate the principles of service excellence",
-      "Demonstrate empathy and active listening in service interactions",
-      "Apply service recovery frameworks in challenging situations",
-      "Contribute to a positive service culture",
-    ],
-    pricing: "Contact us for pricing",
+    number: "02",
+    half: "Day 1 · Afternoon",
+    title: "The Heartware Equation™",
+    focus: "Why hardware & software hit a ceiling · What heartware is and how it's built · The ÷ Me corrective",
+    what: "The diagnostic at the heart of the programme. Participants examine their own development — where they have invested and where they have not. The ego is named directly as the most consistent threat to effective leadership.",
+    outcome: "A clear framework for understanding why capable leaders underperform. Personal awareness of where each participant sits in the equation right now.",
   },
   {
-    category: "Competency-Based",
-    title: "Facilitate Effective Communication & Relationships",
-    subtitle: "Communication and relational skills for leaders",
-    duration: "2 days (16 hours)",
-    participants: "Up to 20 per run",
-    level: "Supervisors and Managers",
-    overview: "Develops the communication and relational skills essential for effective leadership. Covers active listening, feedback, conflict resolution, and building psychological safety in teams.",
-    outcomes: [
-      "Apply active listening and empathic communication techniques",
-      "Deliver constructive feedback that drives performance",
-      "Navigate conflict with skill and confidence",
-      "Build psychologically safe team environments",
-    ],
-    pricing: "Contact us for pricing",
+    number: "03",
+    half: "Day 2 · Morning",
+    title: "The Excavation™",
+    focus: "Mining lived experience · Thematic organisation · Framework as discovery",
+    what: "Participants surface their own negative and positive leadership incidents. Thematically organise them. Begin to see their own framework emerging — not from a template but from their actual experience. CJ's framework is shared as illustration, not prescription.",
+    outcome: "A first draft personal leadership framework. Homework: develop it into something they could teach to others.",
   },
   {
-    category: "Service Excellence",
-    title: "Service Culture Transformation Programme",
-    subtitle: "Customised organisational intervention",
-    duration: "3–6 months (phased)",
-    participants: "Organisation-wide",
-    level: "All levels",
-    overview: "A comprehensive, phased programme that transforms service culture from the inside out. Begins with a culture diagnostic, moves through awareness-building and skill development, and concludes with manager enablement and sustainability planning.",
-    outcomes: [
-      "Establish a shared service vision and values",
-      "Build service competencies at all levels",
-      "Enable managers to sustain service standards",
-      "Measure and track service culture improvement",
-    ],
-    pricing: "Contact us for pricing",
-  },
-  {
-    category: "Competency-Based",
-    title: "Lead with Emotional Intelligence",
-    subtitle: "Emotional intelligence as a leadership competency",
-    duration: "2 days (16 hours)",
-    participants: "Up to 20 per run",
-    level: "Team Leaders and Managers",
-    overview: "Develops emotional intelligence as a leadership competency. Participants learn to recognise and regulate their own emotions, understand others' emotional states, and use emotional data to make better decisions and build stronger teams.",
-    outcomes: [
-      "Identify and manage personal emotional triggers",
-      "Read and respond to team members' emotional states",
-      "Apply emotional intelligence in decision-making",
-      "Build emotionally intelligent team cultures",
-    ],
-    pricing: "Contact us for pricing",
-  },
-  {
-    category: "Leadership",
-    title: "Psychotherapy-Informed Leadership Retreat",
-    subtitle: "Intensive developmental experience",
-    duration: "2 days (residential)",
-    participants: "8–12 participants",
-    level: "Senior Leaders",
-    overview: "An intensive residential retreat that uses psychotherapy-informed facilitation to help senior leaders explore the deeper patterns — personal history, relational dynamics, unconscious beliefs — that shape their leadership. Produces profound and lasting insight.",
-    outcomes: [
-      "Identify personal patterns that limit leadership effectiveness",
-      "Develop greater self-awareness and emotional regulation",
-      "Build authentic leadership presence",
-      "Create a personal development commitment",
-    ],
-    pricing: "Contact us for pricing",
-  },
-  {
-    category: "Customised",
-    title: "Bespoke Leadership & Learning Solutions",
-    subtitle: "Tailored to your organisation's needs",
-    duration: "Flexible",
-    participants: "Flexible",
-    level: "All levels",
-    overview: "We design and deliver bespoke learning solutions for organisations with specific needs that fall outside our standard portfolio. Our design process begins with a thorough needs analysis and results in a programme that is precisely aligned to your strategic objectives.",
-    outcomes: [
-      "Fully customised to your organisational context",
-      "Aligned to your competency framework and KPIs",
-      "Delivered by experienced facilitators",
-      "Supported by pre- and post-programme coaching",
-    ],
-    pricing: "Contact us for a customised proposal",
+    number: "04",
+    half: "Day 2 · Afternoon",
+    title: "Teaching What You've Built",
+    focus: "Share & discuss · Group sharpening · The teaching test",
+    what: "Participants return with their frameworks. Share in groups. Challenge each other's thinking. Then the final requirement: write it up as a class they would run for others. Teaching forces coherence. Coherence forces integrity.",
+    outcome: "A completed, articulable personal leadership philosophy. The discipline of walking the talk — because they have now committed to teaching it.",
   },
 ];
 
-function ProgrammeCard({ prog, index }: { prog: typeof programmes[0]; index: number }) {
-  const [expanded, setExpanded] = useState(false);
-
-  return (
-    <div className={`bg-white rounded-sm border border-[oklch(0.88_0.01_90)] shadow-sm overflow-hidden reveal reveal-delay-${(index % 3) + 1}`}>
-      <div className="p-6">
-        <div className="flex items-start justify-between gap-4 mb-4">
-          <div className="flex-1">
-            <div className="flex flex-wrap gap-2 mb-3">
-              <span className="text-xs px-2 py-1 rounded-sm font-semibold" style={{
-                fontFamily: "'Space Grotesk', sans-serif",
-                background: "oklch(0.93 0.01 90)",
-                color: "oklch(0.26 0.07 255)"
-              }}>
-                {prog.category}
-              </span>
-            </div>
-            <h3 className="text-lg font-semibold text-[oklch(0.26_0.07_255)] mb-1" style={{ fontFamily: "'Fraunces', serif" }}>
-              {prog.title}
-            </h3>
-            <p className="text-[oklch(0.40_0.10_155)] text-sm" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-              {prog.subtitle}
-            </p>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-3 gap-3 mb-4">
-          <div className="flex items-center gap-1.5">
-            <Clock size={13} className="text-[oklch(0.50_0.04_255)]" />
-            <span className="text-xs text-[oklch(0.50_0.04_255)]">{prog.duration}</span>
-          </div>
-          <div className="flex items-center gap-1.5">
-            <Users size={13} className="text-[oklch(0.50_0.04_255)]" />
-            <span className="text-xs text-[oklch(0.50_0.04_255)]">{prog.participants}</span>
-          </div>
-          <div className="flex items-center gap-1.5">
-            <Award size={13} className="text-[oklch(0.50_0.04_255)]" />
-            <span className="text-xs text-[oklch(0.50_0.04_255)]">{prog.level}</span>
-          </div>
-        </div>
-
-        <p className="text-[oklch(0.35_0.04_255)] text-sm leading-relaxed mb-4">{prog.overview}</p>
-
-        {expanded && (
-          <div className="border-t border-[oklch(0.88_0.01_90)] pt-4 mt-2">
-            <h4 className="section-label mb-3">Learning Outcomes</h4>
-            <ul className="space-y-2 mb-4">
-              {prog.outcomes.map((o, i) => (
-                <li key={i} className="flex items-start gap-2">
-                  <CheckCircle2 size={14} className="text-[oklch(0.40_0.10_155)] mt-0.5 shrink-0" />
-                  <span className="text-[oklch(0.35_0.04_255)] text-sm">{o}</span>
-                </li>
-              ))}
-            </ul>
-            <div className="bg-[oklch(0.93_0.01_90)] rounded-sm px-4 py-3">
-              <span className="text-xs font-semibold text-[oklch(0.26_0.07_255)]" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                Pricing: {prog.pricing}
-              </span>
-            </div>
-          </div>
-        )}
-
-        <div className="flex items-center justify-between mt-4 pt-4 border-t border-[oklch(0.88_0.01_90)]">
-          <button
-            onClick={() => setExpanded(!expanded)}
-            className="text-[oklch(0.40_0.10_155)] text-sm font-semibold inline-flex items-center gap-1 hover:gap-2 transition-all"
-            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-          >
-            {expanded ? "Show less" : "View details"}
-            {expanded ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
-          </button>
-          <Link href="/contact" className="text-[oklch(0.26_0.07_255)] text-sm font-semibold inline-flex items-center gap-1 hover:gap-2 transition-all" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-            Enquire <ArrowRight size={14} />
-          </Link>
-        </div>
-      </div>
-    </div>
-  );
-}
+const fitRows = [
+  { fit: "Strong Fit", items: ["Senior managers and above", "High-potential leaders approaching senior roles", "Public sector leaders with cross-sector responsibility"] },
+  { fit: "Possible Fit", items: ["Mid-level managers with significant team responsibility", "Professionals transitioning into leadership roles"] },
+  { fit: "Poor Fit", items: ["Junior staff without leadership experience to excavate", "Organisations seeking a motivational event rather than genuine development"] },
+];
 
 export default function Programmes() {
   useScrollReveal();
-  const [activeCategory, setActiveCategory] = useState("All");
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const filtered = activeCategory === "All"
-    ? programmes
-    : programmes.filter(p => p.category === activeCategory);
 
   return (
     <div className="min-h-screen bg-[oklch(0.97_0.015_90)]">
@@ -229,19 +69,19 @@ export default function Programmes() {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="section-label-light mb-4">Our Programmes</div>
+              <div className="section-label-light mb-4">The Flagship Programme</div>
               <div className="gold-line" />
               <h1 className="heading-display text-5xl lg:text-6xl text-white mb-6">
-                Programmes Built for Impact
+                Two Days.<br />Four Modules.<br />One Framework — Yours.
               </h1>
               <p className="text-white/70 text-lg leading-relaxed">
-                From focused competency-based workshops to multi-module leadership journeys, our programmes are designed to produce measurable change at the individual, team, and organisational levels.
+                A complete arc from systems thinking to personal leadership philosophy — built on lived experience, not borrowed frameworks.
               </p>
             </div>
             <div className="hidden lg:block">
               <img
                 src={PROGRAMMES_IMG}
-                alt="Training programme"
+                alt="The Flagship Programme in session"
                 className="w-full h-72 object-cover rounded-sm shadow-2xl"
               />
             </div>
@@ -249,62 +89,197 @@ export default function Programmes() {
         </div>
       </section>
 
-      {/* Filter + Grid */}
+      {/* Why Two Days */}
       <section className="py-16 bg-[oklch(0.97_0.015_90)]">
         <div className="container mx-auto px-4 lg:px-8">
-          {/* Filter tabs */}
-          <div className="flex flex-wrap gap-2 mb-12">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`px-4 py-2 rounded-sm text-sm font-semibold transition-all ${
-                  activeCategory === cat
-                    ? "bg-[oklch(0.26_0.07_255)] text-white"
-                    : "bg-white border border-[oklch(0.88_0.01_90)] text-[oklch(0.35_0.04_255)] hover:border-[oklch(0.26_0.07_255)]"
-                }`}
-                style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-              >
-                {cat}
-              </button>
-            ))}
+          <div className="max-w-3xl mx-auto">
+            <div className="section-label mb-4 reveal text-center">Why Two Days?</div>
+            <div className="gold-line mx-auto reveal" />
+            <p className="text-[oklch(0.35_0.04_255)] leading-relaxed text-center reveal reveal-delay-1">
+              The work cannot be compressed without being compromised. The first day creates the conceptual foundation and the diagnostic. The second day does the actual excavation and the building. The gap between days — during which participants complete their frameworks — is not dead time. It is where the real integration happens.
+            </p>
+            <div className="mt-8 bg-[oklch(0.26_0.07_255)] rounded-sm p-6 reveal reveal-delay-2">
+              <p className="text-white/70 text-sm leading-relaxed italic text-center" style={{ fontFamily: "'Fraunces', serif" }}>
+                "A 90-minute session can introduce the Heartware Equation. It cannot produce a leader who has genuinely examined their own experience, organised it into a coherent philosophy, and tested it by preparing to teach it. That requires time, discomfort, and return."
+              </p>
+            </div>
           </div>
+        </div>
+      </section>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filtered.map((prog, i) => (
-              <ProgrammeCard key={prog.title} prog={prog} index={i} />
+      {/* Four Modules */}
+      <section className="py-16 bg-[oklch(0.93_0.01_90)]">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="max-w-2xl mb-12">
+            <div className="section-label mb-4 reveal">The Full Architecture</div>
+            <div className="gold-line reveal" />
+            <h2 className="heading-display text-4xl text-[oklch(0.26_0.07_255)] reveal">The Four Modules</h2>
+          </div>
+          <div className="space-y-6">
+            {modules.map((mod, i) => (
+              <div key={i} className={`bg-white rounded-sm border border-[oklch(0.88_0.01_90)] shadow-sm overflow-hidden reveal reveal-delay-${i + 1}`}>
+                <div className="grid lg:grid-cols-4">
+                  {/* Module number + timing */}
+                  <div className="bg-[oklch(0.26_0.07_255)] p-8 flex flex-col justify-center">
+                    <div className="text-[oklch(0.76_0.12_85)] font-bold text-5xl mb-2" style={{ fontFamily: "'Fraunces', serif" }}>{mod.number}</div>
+                    <div className="text-white/50 text-xs tracking-wider uppercase" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{mod.half}</div>
+                    <div className="w-8 h-1 bg-[oklch(0.76_0.12_85)] mt-4" />
+                  </div>
+                  {/* Title + focus */}
+                  <div className="p-8 lg:border-r border-[oklch(0.88_0.01_90)]">
+                    <h3 className="heading-display text-xl text-[oklch(0.26_0.07_255)] mb-3">{mod.title}</h3>
+                    <p className="text-[oklch(0.40_0.10_155)] text-xs leading-relaxed" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{mod.focus}</p>
+                  </div>
+                  {/* What happens */}
+                  <div className="p-8 lg:border-r border-[oklch(0.88_0.01_90)]">
+                    <div className="section-label mb-3">What Happens</div>
+                    <p className="text-[oklch(0.35_0.04_255)] text-sm leading-relaxed">{mod.what}</p>
+                  </div>
+                  {/* Outcome */}
+                  <div className="p-8 bg-[oklch(0.97_0.015_90)]">
+                    <div className="section-label mb-3">Outcome</div>
+                    <p className="text-[oklch(0.35_0.04_255)] text-sm leading-relaxed">{mod.outcome}</p>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Programme enquiry CTA */}
+      {/* Two-product model */}
+      <section className="py-16 bg-[oklch(0.97_0.015_90)]">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="max-w-2xl mb-12">
+            <div className="section-label mb-4 reveal">Two Products</div>
+            <div className="gold-line reveal" />
+            <h2 className="heading-display text-4xl text-[oklch(0.26_0.07_255)] reveal">
+              Not Every Organisation Is Ready for the Full Programme
+            </h2>
+            <p className="text-[oklch(0.35_0.04_255)] mt-4 leading-relaxed reveal reveal-delay-1">
+              We offer two distinct products — each a complete experience in its own right, not a truncated version of the other.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Session Zero */}
+            <div className="bg-white rounded-sm border border-[oklch(0.88_0.01_90)] shadow-sm p-10 reveal">
+              <div className="section-label mb-4">Entry Point</div>
+              <h3 className="heading-display text-3xl text-[oklch(0.26_0.07_255)] mb-2">Session Zero</h3>
+              <div className="flex items-center gap-2 mb-6">
+                <Clock size={14} className="text-[oklch(0.50_0.04_255)]" />
+                <span className="text-[oklch(0.50_0.04_255)] text-sm">90 minutes</span>
+              </div>
+              <p className="text-[oklch(0.35_0.04_255)] leading-relaxed mb-6">
+                A 90-minute introduction to the Heartware Equation™ — for organisations with a constrained brief, or who want to experience the approach before committing to the full programme.
+              </p>
+              <div className="space-y-2 mb-8">
+                {[
+                  "Introduces the Heartware Equation™",
+                  "Demonstrates the facilitation approach",
+                  "Creates demand for the Flagship",
+                  "Priced as an entry point — not discounted",
+                ].map((pt, i) => (
+                  <div key={i} className="flex items-start gap-2">
+                    <CheckCircle2 size={14} className="text-[oklch(0.40_0.10_155)] mt-0.5 shrink-0" />
+                    <span className="text-[oklch(0.35_0.04_255)] text-sm">{pt}</span>
+                  </div>
+                ))}
+              </div>
+              <Link href="/contact" className="btn-secondary inline-flex items-center gap-2 text-sm">
+                Enquire About Session Zero <ArrowRight size={14} />
+              </Link>
+            </div>
+
+            {/* Flagship */}
+            <div className="bg-[oklch(0.26_0.07_255)] rounded-sm shadow-sm p-10 reveal reveal-delay-1">
+              <div className="section-label-light mb-4">The Full Experience</div>
+              <h3 className="heading-display text-3xl text-white mb-2">The Flagship Programme</h3>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="flex items-center gap-2">
+                  <Clock size={14} className="text-white/50" />
+                  <span className="text-white/50 text-sm">2 days</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Users size={14} className="text-white/50" />
+                  <span className="text-white/50 text-sm">20–30 participants</span>
+                </div>
+              </div>
+              <p className="text-white/70 leading-relaxed mb-6">
+                The full two-day programme. The complete arc from systems thinking through The Excavation™ to personal leadership philosophy. This is the product.
+              </p>
+              <div className="space-y-2 mb-8">
+                {[
+                  "Four modules across two days",
+                  "Residential or focused offsite format",
+                  "Small group work (5–6 per group) for The Excavation™",
+                  "Post-programme synthesis report",
+                  "Priced to reflect full value",
+                ].map((pt, i) => (
+                  <div key={i} className="flex items-start gap-2">
+                    <CheckCircle2 size={14} className="text-[oklch(0.76_0.12_85)] mt-0.5 shrink-0" />
+                    <span className="text-white/70 text-sm">{pt}</span>
+                  </div>
+                ))}
+              </div>
+              <Link href="/contact" className="btn-outline-light inline-flex items-center gap-2 text-sm">
+                Enquire About the Flagship <ArrowRight size={14} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Who this is for */}
       <section className="py-16 bg-[oklch(0.93_0.01_90)]">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <div className="gold-line mx-auto reveal" />
-            <h2 className="heading-display text-3xl text-[oklch(0.26_0.07_255)] mb-5 reveal">
-              Not Sure Which Programme Fits?
-            </h2>
-            <p className="text-[oklch(0.35_0.04_255)] leading-relaxed mb-8 reveal reveal-delay-1">
-              Every organisation has unique learning needs. Our team will work with you to understand your context, your people, and your goals — and recommend the right combination of programmes and delivery formats.
+          <div className="max-w-2xl mb-12">
+            <div className="section-label mb-4 reveal">Who This Is For</div>
+            <div className="gold-line reveal" />
+            <h2 className="heading-display text-4xl text-[oklch(0.26_0.07_255)] reveal">The Right Participant</h2>
+            <p className="text-[oklch(0.35_0.04_255)] mt-4 leading-relaxed reveal reveal-delay-1">
+              This programme is designed for leaders who are past the early stages of their careers — people who have enough experience to excavate something meaningful, and enough influence for their leadership philosophy to actually matter to others.
             </p>
-            <div className="grid md:grid-cols-3 gap-6 mb-8">
-              {[
-                { label: "Open Enrolment", value: "Public Runs", note: "Join scheduled cohorts alongside peers from other organisations" },
-                { label: "In-House Delivery", value: "Private Runs", note: "Exclusive delivery for your team at your preferred location" },
-                { label: "Bespoke Design", value: "Customised", note: "Fully tailored programmes built around your specific objectives" },
-              ].map((f, i) => (
-                <div key={i} className={`bg-white rounded-sm p-6 border border-[oklch(0.88_0.01_90)] reveal reveal-delay-${i + 1}`}>
-                  <div className="text-2xl font-bold text-[oklch(0.26_0.07_255)] mb-1" style={{ fontFamily: "'Fraunces', serif" }}>{f.value}</div>
-                  <div className="text-[oklch(0.40_0.10_155)] text-sm font-semibold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{f.label}</div>
-                  <div className="text-[oklch(0.50_0.04_255)] text-xs">{f.note}</div>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {fitRows.map((row, i) => (
+              <div key={i} className={`rounded-sm p-8 reveal reveal-delay-${i + 1} ${
+                i === 0 ? "bg-[oklch(0.26_0.07_255)]" : i === 1 ? "bg-white border border-[oklch(0.88_0.01_90)]" : "bg-[oklch(0.88_0.01_90)]"
+              }`}>
+                <div className={`text-xs font-bold tracking-widest uppercase mb-5 ${
+                  i === 0 ? "text-[oklch(0.76_0.12_85)]" : i === 1 ? "text-[oklch(0.40_0.10_155)]" : "text-[oklch(0.50_0.04_255)]"
+                }`} style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                  {row.fit}
                 </div>
-              ))}
+                <ul className="space-y-3">
+                  {row.items.map((item, j) => (
+                    <li key={j} className={`text-sm leading-relaxed ${i === 0 ? "text-white/80" : "text-[oklch(0.35_0.04_255)]"}`}>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing note */}
+      <section className="py-16 bg-[oklch(0.97_0.015_90)]">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="max-w-3xl mx-auto bg-white rounded-sm border border-[oklch(0.88_0.01_90)] shadow-sm p-10 reveal">
+            <div className="w-10 h-1 bg-[oklch(0.76_0.12_85)] mb-6" />
+            <h3 className="heading-display text-2xl text-[oklch(0.26_0.07_255)] mb-4">A Note on Pricing</h3>
+            <p className="text-[oklch(0.35_0.04_255)] leading-relaxed mb-4">
+              We adopt a transparent, modular pricing structure. Facilitation fees are fixed professional fees for programme delivery. Venue and logistics are billed at cost or managed directly by the client. Post-programme support is available as an optional retainer for ongoing coaching or organisational development consulting.
+            </p>
+            <p className="text-[oklch(0.35_0.04_255)] leading-relaxed">
+              We are honest with early clients that the Flagship is a first formal cohort — and we price and position accordingly. Contact us for a conversation about what is right for your organisation.
+            </p>
+            <div className="mt-8">
+              <Link href="/contact" className="btn-primary inline-flex items-center gap-2">
+                Request Pricing <ArrowRight size={16} />
+              </Link>
             </div>
-            <Link href="/contact" className="btn-primary inline-flex items-center gap-2 reveal reveal-delay-2">
-              Speak to Our Team <ArrowRight size={16} />
-            </Link>
           </div>
         </div>
       </section>

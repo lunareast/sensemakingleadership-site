@@ -1,5 +1,6 @@
 /* ============================================================
    SERVICES PAGE — Sensemaking Leadership
+   Content sourced from: SensemakingFlagshipProgrammev2, SLcomments
    ============================================================ */
 
 import { useEffect } from "react";
@@ -7,103 +8,86 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Link } from "wouter";
-import {
-  ArrowRight, Brain, BookOpen, Star, Heart,
-  Target, Lightbulb, BarChart2, Users, CheckCircle2
-} from "lucide-react";
+import { ArrowRight, Brain, BookOpen, Star, Heart, Target, Lightbulb, BarChart2, CheckCircle2 } from "lucide-react";
 
 const FRAMEWORK_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663064472366/d9LisnvZb933dYZtQnPs5E/services-visual-LfMb4K8tKAWzSRqUQ7xskW.webp";
 
 const services = [
   {
     icon: <Brain size={32} className="text-[oklch(0.76_0.12_85)]" />,
-    title: "Leadership Development",
-    tagline: "Building Adaptive, Reflective Leaders",
-    desc: "Our leadership development programmes are designed for the realities of today's complex, fast-changing environment. Drawing on sensemaking theory, systems thinking, and evidence-based leadership research, we develop leaders who can navigate ambiguity, build trust, and inspire purposeful action.",
+    title: "The Flagship Programme",
+    tagline: "Two Days. Four Modules. One Framework — Yours.",
+    desc: "A two-day leadership development experience built on 25 years of practice across military command, Cabinet, and the private sector. The complete arc from systems thinking through The Excavation™ to a personal leadership philosophy — built on lived experience, not borrowed frameworks.",
     features: [
-      "Sensemaking and adaptive leadership frameworks",
-      "360-degree feedback and Individual Development Plans",
-      "Experiential learning with real-world application",
-      "Cohort-based and one-to-one coaching formats",
-      "Available as open-enrolment or customised in-house programmes",
+      "Module 1: The World You Lead In — systems thinking and the Singapore Strategy Map",
+      "Module 2: The Heartware Equation™ — the diagnostic for why capable leaders underperform",
+      "Module 3: The Excavation™ — mining lived experience to discover your own framework",
+      "Module 4: Teaching What You've Built — coherence through the discipline of teaching",
+      "Post-programme synthesis report",
     ],
-    audience: "Senior leaders, emerging leaders, leadership teams",
+    audience: "Senior managers and above; high-potential leaders approaching senior roles",
   },
   {
-    icon: <BookOpen size={32} className="text-[oklch(0.76_0.12_85)]" />,
-    title: "Competency-Based Training",
-    tagline: "Structured Learning Built Around Measurable Outcomes",
-    desc: "We design and deliver competency-based training programmes grounded in adult learning principles. Our courses are built around clear learning outcomes, robust assessment, and measurable workplace transfer — ensuring that learning translates into real performance improvement.",
+    icon: <Lightbulb size={32} className="text-[oklch(0.76_0.12_85)]" />,
+    title: "Session Zero",
+    tagline: "A First Encounter with the Methodology",
+    desc: "A 90-minute introduction to the Heartware Equation™ — for organisations with a constrained brief, or who want to experience the approach before committing to the full Flagship Programme. Priced as an entry point, not a discount — it is a different product with a different scope.",
     features: [
-      "Competency-based curriculum design and delivery",
-      "Clear learning outcomes tied to workplace performance",
-      "Robust assessment and certification processes",
-      "Available as open-enrolment or customised in-house programmes",
-      "Regular curriculum review aligned to industry standards",
+      "Introduction to the Heartware Equation™",
+      "Demonstration of the facilitation approach",
+      "First experience of working with CJ",
+      "Designed to create demand for the Flagship",
+      "Can be co-facilitated or delivered online",
     ],
-    audience: "Individuals, SMEs, large organisations",
+    audience: "Leadership teams, HR decision-makers, organisations exploring the approach",
   },
   {
     icon: <Star size={32} className="text-[oklch(0.76_0.12_85)]" />,
     title: "Service Excellence",
     tagline: "Transforming Service Culture from the Inside Out",
-    desc: "Service excellence is not a script — it is a mindset. Our programmes go beyond customer service techniques to address the values, beliefs, and relational patterns that drive service behaviour. We help organisations build cultures where excellence is intrinsic, not imposed.",
+    desc: "Service excellence is not a script — it is a mindset. Our programmes address the values, beliefs, and relational patterns that drive service behaviour. The Heartware component is framed around empathy, relational trust, and service excellence — not just customer service techniques.",
     features: [
       "Service culture diagnostics and gap analysis",
       "Experiential workshops with role-play and simulation",
       "Manager enablement for sustaining service standards",
-      "Structured service excellence modules available",
+      "Structured service excellence modules",
       "Post-programme coaching and follow-up",
     ],
     audience: "Customer-facing teams, service managers, hospitality and healthcare sectors",
   },
   {
     icon: <Heart size={32} className="text-[oklch(0.76_0.12_85)]" />,
-    title: "Psychotherapy-Informed Learning",
-    tagline: "Deepening Self-Awareness for Lasting Change",
-    desc: "Our signature methodology integrates principles from psychotherapy — including attachment theory, cognitive-behavioural approaches, and somatic awareness — into leadership and learning facilitation. This creates learning experiences that address the whole person, not just the professional role.",
+    title: "Psychotherapy-Informed Facilitation",
+    tagline: "Psychological Safety as a Design Principle",
+    desc: "Our facilitation integrates psychotherapy principles — attachment theory, cognitive-behavioural approaches, and somatic awareness — to create the psychological safety required for genuine reflection. The Excavation™ is framed as professional reflection, not personal therapy, with structured facilitation and clear boundaries.",
     features: [
       "Trauma-informed facilitation practices",
+      "Psychological safety techniques for sensitive content",
       "Attachment and relational intelligence frameworks",
-      "Cognitive-behavioural tools for mindset change",
-      "Somatic and embodied leadership practices",
+      "Cognitive-behavioural tools for mindset work",
       "Confidential one-to-one developmental coaching",
     ],
     audience: "Leaders, HR practitioners, social workers, educators",
   },
   {
     icon: <Target size={32} className="text-[oklch(0.76_0.12_85)]" />,
-    title: "Process Optimisation",
-    tagline: "Aligning Operations with Strategic Intent",
-    desc: "Effective organisations are built on well-designed processes. We work with leadership teams to map, analyse, and redesign workflows — eliminating inefficiency, reducing risk, and aligning operations with strategic priorities. Our approach combines business analysis rigour with human-centred design.",
+    title: "Organisational Development",
+    tagline: "Building the Conditions for Strategy to Work",
+    desc: "When organisations invest in hardware and software but neglect heartware, they hit a ceiling. We work with leadership teams to build the trust, alignment, and shared purpose that determine whether strategy actually gets executed — addressing the human conditions that most consulting engagements ignore.",
     features: [
-      "Business process mapping and analysis",
-      "Lean and systems-thinking methodologies",
-      "Stakeholder engagement and change management",
-      "KPI design and performance measurement",
-      "Implementation support and review",
+      "Leadership team alignment and culture work",
+      "Stakeholder engagement and coalition building",
+      "Systems thinking applied to organisational challenges",
+      "Change management and transition support",
+      "Ongoing retainer for organisational development consulting",
     ],
-    audience: "Operations teams, HR departments, SMEs undergoing transformation",
-  },
-  {
-    icon: <Lightbulb size={32} className="text-[oklch(0.76_0.12_85)]" />,
-    title: "Facilitation & Coaching",
-    tagline: "Creating Spaces Where Transformation Happens",
-    desc: "Our accredited facilitators and coaches work with individuals, teams, and organisations to unlock potential, resolve conflict, and build collective intelligence. We facilitate strategic planning sessions, team retreats, and developmental conversations with skill and care.",
-    features: [
-      "IAF-aligned facilitation methodology",
-      "Strategic planning and team alignment workshops",
-      "Executive and leadership coaching",
-      "Team dynamics and conflict resolution",
-      "Group coaching and peer learning circles",
-    ],
-    audience: "Executive teams, boards, leadership cohorts, project teams",
+    audience: "Leadership teams, boards, organisations navigating significant change",
   },
   {
     icon: <BarChart2 size={32} className="text-[oklch(0.76_0.12_85)]" />,
     title: "Curriculum Development",
-    tagline: "Learning Design That Drives Measurable Impact",
-    desc: "We design and develop competency-based curricula for organisations, training providers, and government agencies. Our learning design process is rigorous, evidence-based, and aligned to national and industry competency frameworks.",
+    tagline: "Learning Design That Produces Measurable Transfer",
+    desc: "Competency-based curriculum design for organisations and training providers — grounded in adult learning science and built for measurable workplace transfer. Samuel's background in psychotherapy-informed facilitation and competency-based design ensures the learning architecture is as rigorous as the content.",
     features: [
       "Needs analysis and competency mapping",
       "Competency-aligned curriculum design",
@@ -136,33 +120,33 @@ export default function Services() {
               Our Services
             </h1>
             <p className="text-white/70 text-lg leading-relaxed">
-              A comprehensive suite of learning, development, and consulting services — each designed to produce measurable behavioural change and lasting organisational impact.
+              Every engagement is grounded in the same intellectual architecture — the Heartware Equation™, The Excavation™ methodology, and the conviction that durable leadership is built from the inside out.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Framework image */}
+      {/* Framework */}
       <section className="py-16 bg-[oklch(0.93_0.01_90)]">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="reveal">
-              <div className="section-label mb-4">Our Approach</div>
+              <div className="section-label mb-4">The Intellectual Architecture</div>
               <div className="gold-line" />
               <h2 className="heading-display text-3xl lg:text-4xl text-[oklch(0.26_0.07_255)] mb-5">
-                An Integrated System of Learning
+                Three Interlocking Ideas
               </h2>
               <p className="text-[oklch(0.35_0.04_255)] leading-relaxed mb-5">
-                Our services are not standalone offerings — they are interconnected disciplines within a coherent learning system. The Transformative Learning Framework ensures that every engagement, regardless of entry point, contributes to the development of the whole leader and the whole organisation.
+                The Heartware Equation™, the Five Domains of Heartware, and the Leadership Framework are not independent frameworks. They are a single system, presented in sequence — and they form the conceptual spine of everything we do.
               </p>
               <p className="text-[oklch(0.35_0.04_255)] leading-relaxed">
-                Whether you engage us for a single workshop or a multi-year leadership journey, you benefit from the same rigorous methodology, the same commitment to evidence-based practice, and the same focus on lasting impact.
+                Whether you engage us for a single workshop or a multi-year leadership journey, you benefit from the same rigorous methodology, the same commitment to practitioner-led learning, and the same focus on durable, owned outcomes.
               </p>
             </div>
             <div className="reveal reveal-delay-1">
               <img
                 src={FRAMEWORK_IMG}
-                alt="Transformative Learning Framework"
+                alt="The Transformative Learning Framework"
                 className="w-full rounded-sm shadow-xl"
               />
             </div>
@@ -175,11 +159,7 @@ export default function Services() {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="space-y-16">
             {services.map((svc, i) => (
-              <div
-                key={i}
-                className={`grid lg:grid-cols-3 gap-8 pb-16 border-b border-[oklch(0.88_0.01_90)] last:border-0 reveal`}
-              >
-                {/* Icon + title */}
+              <div key={i} className={`grid lg:grid-cols-3 gap-8 pb-16 border-b border-[oklch(0.88_0.01_90)] last:border-0 reveal`}>
                 <div className="lg:col-span-1">
                   <div className="w-14 h-14 bg-[oklch(0.26_0.07_255)] rounded-sm flex items-center justify-center mb-5">
                     {svc.icon}
@@ -192,13 +172,9 @@ export default function Services() {
                     <span className="font-semibold">For:</span> {svc.audience}
                   </div>
                 </div>
-
-                {/* Description */}
                 <div className="lg:col-span-1">
                   <p className="text-[oklch(0.35_0.04_255)] leading-relaxed">{svc.desc}</p>
                 </div>
-
-                {/* Features */}
                 <div className="lg:col-span-1">
                   <h4 className="section-label mb-4">What's Included</h4>
                   <ul className="space-y-2">
@@ -224,7 +200,7 @@ export default function Services() {
             Not Sure Where to Start?
           </h2>
           <p className="text-white/70 max-w-xl mx-auto mb-8 reveal reveal-delay-1">
-            Our team will work with you to understand your organisation's needs and recommend the most appropriate combination of services and programmes.
+            Start with Session Zero — a 90-minute introduction to the Heartware Equation™. No obligation. Just a first encounter with a methodology that takes leadership seriously.
           </p>
           <div className="flex flex-wrap gap-4 justify-center reveal reveal-delay-2">
             <Link href="/contact" className="btn-primary inline-flex items-center gap-2">

@@ -1,7 +1,5 @@
 /* ============================================================
    FOOTER — Sensemaking Leadership
-   Design: Deep navy background, three-column layout,
-   gold accent on brand mark, Space Grotesk labels
    ============================================================ */
 
 import { Link } from "wouter";
@@ -29,7 +27,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-white/60 text-sm leading-relaxed mb-6">
-              Developing leaders who make meaning of complexity and drive lasting organisational change across Singapore and the region.
+              Developing leaders who navigate complexity with clarity, drive transformative learning, and build organisations that endure.
             </p>
             <div className="flex gap-3">
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
@@ -71,13 +69,12 @@ export default function Footer() {
             <h4 className="section-label-light mb-5">Services</h4>
             <ul className="space-y-2">
               {[
-                "Leadership Development",
-                "Competency-Based Training",
+                "The Flagship Programme",
+                "Session Zero",
                 "Service Excellence",
-                "Transformative Learning",
-                "Process Optimisation",
-                "Facilitation & Coaching",
-                "Business Analysis",
+                "Psychotherapy-Informed Facilitation",
+                "Organisational Development",
+                "Curriculum Development",
               ].map((s) => (
                 <li key={s}>
                   <span className="text-white/60 text-sm" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
@@ -113,8 +110,6 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
-
-
           </div>
         </div>
       </div>
